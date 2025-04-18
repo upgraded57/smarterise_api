@@ -5,6 +5,7 @@ export const Pictures = [
     height: 2813,
     url: "https://unsplash.com/photos/ZJsseAxEcqM",
     width: 5000,
+    name: "Vibbler",
   },
   {
     author: "Alejandro Escamilla",
@@ -12,6 +13,7 @@ export const Pictures = [
     height: 3269,
     url: "https://unsplash.com/photos/ABDTiLqDhJA",
     width: 5000,
+    name: "Flostroom",
   },
   {
     author: "Paul Jarvis",
@@ -19,6 +21,7 @@ export const Pictures = [
     height: 1667,
     url: "https://unsplash.com/photos/Ps2n0rShqaM",
     width: 2500,
+    name: "Glimflare",
   },
   {
     author: "Alan Haverty",
@@ -26,6 +29,7 @@ export const Pictures = [
     height: 2576,
     url: "https://unsplash.com/photos/-XA-fTYYfV0",
     width: 4592,
+    name: "Snappix",
   },
   {
     author: "Yoni Kaplan-Nadel",
@@ -33,6 +37,7 @@ export const Pictures = [
     height: 1836,
     url: "https://unsplash.com/photos/iJnZwLBOB1I",
     width: 3264,
+    name: "Blurrlight",
   },
   {
     author: "Vadim Sherbakov",
@@ -40,6 +45,7 @@ export const Pictures = [
     height: 2790,
     url: "https://unsplash.com/photos/osSryggkso4",
     width: 4179,
+    name: "Winkbyte",
   },
   {
     author: "Nicholas Swanson",
@@ -47,6 +53,7 @@ export const Pictures = [
     height: 2176,
     url: "https://unsplash.com/photos/d19by2PLaPc",
     width: 3264,
+    name: "Drifthue",
   },
   {
     author: "Tyler Finck",
@@ -54,6 +61,7 @@ export const Pictures = [
     height: 2000,
     url: "https://unsplash.com/photos/Cs4QZdHrHt4",
     width: 3000,
+    name: "Popshade",
   },
   {
     author: "Justin Leibow",
@@ -61,6 +69,7 @@ export const Pictures = [
     height: 2813,
     url: "https://unsplash.com/photos/ZJsseAxEcqM",
     width: 5000,
+    name: "Lenseed",
   },
   {
     author: "Alejandro Escamilla",
@@ -68,6 +77,7 @@ export const Pictures = [
     height: 3269,
     url: "https://unsplash.com/photos/ABDTiLqDhJA",
     width: 5000,
+    name: "jollysnap",
   },
   {
     author: "Paul Jarvis",
@@ -75,6 +85,7 @@ export const Pictures = [
     height: 1667,
     url: "https://unsplash.com/photos/Ps2n0rShqaM",
     width: 2500,
+    name: "Quirkshot",
   },
   {
     author: "Alan Haverty",
@@ -82,6 +93,7 @@ export const Pictures = [
     height: 2576,
     url: "https://unsplash.com/photos/-XA-fTYYfV0",
     width: 4592,
+    name: "Smooshot",
   },
   {
     author: "Yoni Kaplan-Nadel",
@@ -89,6 +101,7 @@ export const Pictures = [
     height: 1836,
     url: "https://unsplash.com/photos/iJnZwLBOB1I",
     width: 3264,
+    name: "Twinkleaf",
   },
   {
     author: "Vadim Sherbakov",
@@ -96,6 +109,7 @@ export const Pictures = [
     height: 2790,
     url: "https://unsplash.com/photos/osSryggkso4",
     width: 4179,
+    name: "Fluzzgleam",
   },
   {
     author: "Nicholas Swanson",
@@ -103,6 +117,7 @@ export const Pictures = [
     height: 2176,
     url: "https://unsplash.com/photos/d19by2PLaPc",
     width: 3264,
+    name: "Snicksie",
   },
   {
     author: "Tyler Finck",
@@ -110,5 +125,6 @@ export const Pictures = [
     height: 2000,
     url: "https://unsplash.com/photos/Cs4QZdHrHt4",
     width: 3000,
+    name: "Glowflinch",
   },
 ];

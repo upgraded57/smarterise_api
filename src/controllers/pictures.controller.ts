@@ -1,12 +1,29 @@
 import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
 import { HttpExceptions } from "../functions/errorHandler";
+import { Pictures } from "../../data/index";
 
 const prisma = new PrismaClient({
   log: ["warn", "error"],
 });
 
 export const GetAllPictures = async (req: Request, res: Response) => {
+  // const savePictures = Pictures.map(async (item) => {
+  //   try {
+  //     const res = await prisma.picture.create({
+  //       data: {
+  //         ...item,
+  //       },
+  //     });
+
+  //     console.log("Picture Created", res.name);
+  //   } catch (error) {
+  //     console.log("Error", error);
+  //   }
+  // });
+
+  // await Promise.all(savePictures);
+
   const pictures = await prisma.picture.findMany();
   const picttureViews = await prisma.pictureViews.findMany({
     select: {

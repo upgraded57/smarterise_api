@@ -10,76 +10,85 @@ export const IncreasePictureView = async (
   pictureId: string
 ) => {
   let picture;
-  // Check if view with same session already exists
-  const pictureViewed = await prisma.pictureViews.findFirst({
-    where: {
-      sessionId,
-      pictureId,
-    },
-  });
+  try {
+    // Check if view with same session already exists
+    const pictureViewed = await prisma.pictureViews.findFirst({
+      where: {
+        sessionId,
+        pictureId,
+      },
+    });
 
-  if (pictureViewed) {
-    picture = null;
-    return picture;
-  }
+    if (pictureViewed) {
+      picture = null;
+      return picture;
+    }
 
-  const createdPicture = await prisma.pictureViews.create({
-    data: {
-      sessionId,
-      userId,
-      picture: {
-        connect: {
-          id: pictureId,
+    const createdPicture = await prisma.pictureViews.create({
+      data: {
+        sessionId,
+        userId,
+        picture: {
+          connect: {
+            id: pictureId,
+          },
         },
       },
-    },
-    include: {
-      picture: true,
-    },
-  });
+      include: {
+        picture: true,
+      },
+    });
 
-  const pictureViewer = await prisma.user.findUnique({
-    where: {
-      id: userId,
-    },
-    select: {
-      email: true,
-      name: true,
-    },
-  });
+    const pictureViewer = await prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+      select: {
+        email: true,
+        name: true,
+      },
+    });
 
-  picture = {
-    id: createdPicture.id,
-    sessionId: createdPicture.sessionId,
-    userId: createdPicture.userId,
-    pictureId: createdPicture.pictureId,
-    userEmail: pictureViewer ? pictureViewer.email : "",
-    pictureAuthor: createdPicture.picture.author,
-    pictureName: createdPicture.picture.name,
-    username: pictureViewer?.name,
-  };
+    picture = {
+      id: createdPicture.id,
+      sessionId: createdPicture.sessionId,
+      userId: createdPicture.userId,
+      pictureId: createdPicture.pictureId,
+      userEmail: pictureViewer ? pictureViewer.email : "",
+      pictureAuthor: createdPicture.picture.author,
+      pictureName: createdPicture.picture.name,
+      username: pictureViewer?.name,
+    };
 
-  return picture;
+    return picture;
+  } catch (error) {
+    console.log("Unable to increase picture view count", error);
+    return false;
+  }
 };
 
 export const setUserLastView = async (email?: string) => {
   if (!email) {
     return false;
   }
-  const user = await prisma.user.update({
-    where: {
-      email,
-    },
-    data: {
-      lastSeen: new Date(),
-    },
-  });
+  try {
+    const user = await prisma.user.update({
+      where: {
+        email,
+      },
+      data: {
+        lastSeen: new Date(),
+      },
+    });
 
-  if (!user) {
-    return false;
+    if (!user) {
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.log("Unable to set user last view", error);
   }
-
-  return true;
 };
 
 export const RegisterViewedPage = async (
@@ -100,6 +109,7 @@ export const RegisterViewedPage = async (
 
     return true;
   } catch (error) {
+    console.log("Unable to register page as viewed", error);
     return false;
   }
 };
