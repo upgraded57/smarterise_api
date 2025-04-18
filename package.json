@@ -1,0 +1,32 @@
+{
+  "name": "express-api-starter-ts",
+  "version": "1.2.0",
+  "description": " A basic starter for an express.js API with Typescript",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start:dist": "node dist/src/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "Shokunbi Micheal",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.20",
+    "@types/node": "^22.7.5",
+    "nodemon": "^3.1.7",
+    "prisma": "^6.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
