@@ -55,14 +55,13 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 // Error handler
 app.use(errorHandler);
 
-const activeUsers = getActiveUsers();
-
 // Register socket event handler
 io.on("connection", (socket) => {
   registerSocketHandlers(io, socket);
 
   // Broadcast active users count
   if (!broadcastInterval) {
+    const activeUsers = getActiveUsers();
     broadcastInterval = setInterval(() => {
       io.emit("activeUsers", activeUsers);
     }, 3000);
